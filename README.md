@@ -4,6 +4,8 @@ After upgrading to `Swashbuckle.AspNetCore 6.3.0`, I started to get errors in my
 
 ![Swagger Error](https://github.com/jonsagara/SwashbuckleAspNetCoreRepro/blob/main/swagger_error.png?raw=true)
 
+The error only seems to happen if the action captures route values using properties in a nested class.
+
 This is a minimal reproduction using an ASP.NET Core MVC application with a test API controller named `TestController`.
 
 ## To view the working version ##
