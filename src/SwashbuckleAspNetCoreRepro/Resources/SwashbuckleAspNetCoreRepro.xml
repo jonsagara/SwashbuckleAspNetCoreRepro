@@ -9,15 +9,17 @@
             Test API controller.
             </summary>
         </member>
-        <member name="M:SwashbuckleAspNetCoreRepro.Controllers.Api.V1.TestController.GetNested(SwashbuckleAspNetCoreRepro.Controllers.Api.V1.NestedActionModel.Query)">
+        <member name="M:SwashbuckleAspNetCoreRepro.Controllers.Api.V1.TestController.GetNonNested(System.Int32)">
             <summary>
-            This is a test method with a nested class to capture parameters.
+            This action captures the route parameter in a simple int, and does not throw a swagger error upon
+            clicking the action to expand it.
             </summary>
             <returns>An object with a message.</returns>
         </member>
-        <member name="M:SwashbuckleAspNetCoreRepro.Controllers.Api.V1.TestController.GetNonNested(System.Int32)">
+        <member name="M:SwashbuckleAspNetCoreRepro.Controllers.Api.V1.TestController.GetNested(SwashbuckleAspNetCoreRepro.Controllers.Api.V1.NestedActionModel.Query)">
             <summary>
-            This is a test method with a nested class to capture parameters.
+            This method captures the route parameter in an int property within a nested class, and does throw a 
+            swagger error upon clicking the action to expand it.
             </summary>
             <returns>An object with a message.</returns>
         </member>

@@ -11,19 +11,8 @@ namespace SwashbuckleAspNetCoreRepro.Controllers.Api.V1;
 public class TestController : ControllerBase
 {
     /// <summary>
-    /// This is a test method with a nested class to capture parameters.
-    /// </summary>
-    /// <returns>An object with a message.</returns>
-    [HttpGet("GetNested/{id}")]
-    public async Task<IActionResult> GetNested(NestedActionModel.Query query)
-    {
-        await Task.CompletedTask;
-
-        return Ok(new { message = "this is a nested class test" });
-    }
-
-    /// <summary>
-    /// This is a test method with a nested class to capture parameters.
+    /// This action captures the route parameter in a simple int, and does not throw a swagger error upon
+    /// clicking the action to expand it.
     /// </summary>
     /// <returns>An object with a message.</returns>
     [HttpGet("GetNonNested/{id}")]
@@ -32,6 +21,19 @@ public class TestController : ControllerBase
         await Task.CompletedTask;
 
         return Ok(new { message = "this is a non-nested class test" });
+    }
+
+    /// <summary>
+    /// This method captures the route parameter in an int property within a nested class, and does throw a 
+    /// swagger error upon clicking the action to expand it.
+    /// </summary>
+    /// <returns>An object with a message.</returns>
+    [HttpGet("GetNested/{id}")]
+    public async Task<IActionResult> GetNested(NestedActionModel.Query query)
+    {
+        await Task.CompletedTask;
+
+        return Ok(new { message = "this is a nested class test" });
     }
 }
 
