@@ -10,7 +10,7 @@ This is a minimal reproduction using an ASP.NET Core MVC application with a test
 
 ## To view the working version ##
 
-1. Check branch `6.2.3`
+1. Check out branch `6.2.3`
 1. Open the solution in Visual Studio 2022
 1. Run the application
 1. Navigate to `https://localhost:7211/swagger/` in your browser
