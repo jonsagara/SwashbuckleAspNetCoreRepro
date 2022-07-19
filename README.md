@@ -32,6 +32,6 @@ The action `TestController.GetNested(...)` uses an `int` property in a nested cl
 
 ## Environment ##
 
-- Visual Studio 2022 17.1.1
-- .NET SDK 6.0.201
-- Windows 10 Version 21H2 (OS Build 19044.1586)
+- Visual Studio 2022 17.2.6
+- .NET SDK 6.0.302
+- Windows 10 Version 21H2 (OS Build 19044.1826)
