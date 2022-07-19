@@ -1,4 +1,4 @@
-# Swashbuckle.AspNetCore 6.3.0 bug reproduction
+# Swashbuckle.AspNetCore 6.3.0 (and above) bug reproduction
 
 After upgrading to `Swashbuckle.AspNetCore 6.3.0`, I started to get errors in my swagger docs whenever I clicked on an action name to expand the details:
 
@@ -7,6 +7,8 @@ After upgrading to `Swashbuckle.AspNetCore 6.3.0`, I started to get errors in my
 The error only seems to happen if the action captures route values using properties in a nested class.
 
 This is a minimal reproduction using an ASP.NET Core MVC application with a test API controller named `TestController`.
+
+**2022-07-19**: Verified that the bug still exists in `Swashbuckle.AspNetCore 6.4.0`.
 
 ## To view the working version ##
 
