@@ -8,6 +8,8 @@ The error only seems to happen if the action captures route values using propert
 
 This is a minimal reproduction using an ASP.NET Core MVC application with a test API controller named `TestController`.
 
+**2023-01-11**: Verified that the bug still exists in `Swashbuckle.AspNetCore 6.5.0`.
+
 **2022-07-19**: Verified that the bug still exists in `Swashbuckle.AspNetCore 6.4.0`.
 
 ## To view the working version ##
@@ -32,6 +34,6 @@ The action `TestController.GetNested(...)` uses an `int` property in a nested cl
 
 ## Environment ##
 
-- Visual Studio 2022 17.2.6
-- .NET SDK 6.0.302
-- Windows 10 Version 21H2 (OS Build 19044.1826)
+- Visual Studio 2022 17.5.0 Preview 2.0
+- .NET SDK 7.0.102
+- Windows 10 Version 22H2 (OS Build 22621.1105)
