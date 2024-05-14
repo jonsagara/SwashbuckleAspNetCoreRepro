@@ -75,13 +75,13 @@
             Configures the Swagger generation options.
             </summary>
             <remarks>This allows API versioning to define a Swagger document per API version after the
-            <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider"/> service has been resolved from the service container.</remarks>
+            <see cref="T:Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider"/> service has been resolved from the service container.</remarks>
         </member>
-        <member name="M:SwashbuckleAspNetCoreRepro.Infrastructure.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+        <member name="M:SwashbuckleAspNetCoreRepro.Infrastructure.ConfigureSwaggerOptions.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)">
             <summary>
             Initializes a new instance of the <see cref="T:SwashbuckleAspNetCoreRepro.Infrastructure.ConfigureSwaggerOptions"/> class.
             </summary>
-            <param name="provider">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider">provider</see> used to generate Swagger documents.</param>
+            <param name="provider">The <see cref="T:Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider">provider</see> used to generate Swagger documents.</param>
         </member>
         <member name="M:SwashbuckleAspNetCoreRepro.Infrastructure.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
             <inheritdoc />

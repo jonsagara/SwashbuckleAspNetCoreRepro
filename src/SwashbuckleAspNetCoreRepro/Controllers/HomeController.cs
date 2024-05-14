@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using SwashbuckleAspNetCoreRepro.Models;
 

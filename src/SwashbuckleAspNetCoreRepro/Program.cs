@@ -1,5 +1,5 @@
 using System.Reflection;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Asp.Versioning.ApiExplorer;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using SwashbuckleAspNetCoreRepro.Infrastructure;
@@ -10,25 +10,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services
-    .AddApiVersioning(
-        options =>
-        {
-            // reporting api versions will return the headers "api-supported-versions" and "api-deprecated-versions"
-            options.ReportApiVersions = true;
-        });
+    .AddApiVersioning(options =>
+    {
+        // reporting api versions will return the headers "api-supported-versions" and "api-deprecated-versions"
+        options.ReportApiVersions = true;
+    })
+    .AddMvc()
+    .AddApiExplorer(options =>
+    {
+        // add the versioned api explorer, which also adds IApiVersionDescriptionProvider service
+        // note: the specified format code will format the version as "'v'major[.minor][-status]"
+        options.GroupNameFormat = "'v'VVV";
 
-builder.Services
-    .AddVersionedApiExplorer(
-        options =>
-        {
-            // add the versioned api explorer, which also adds IApiVersionDescriptionProvider service
-            // note: the specified format code will format the version as "'v'major[.minor][-status]"
-            options.GroupNameFormat = "'v'VVV";
-
-            // note: this option is only necessary when versioning by url segment. the SubstitutionFormat
-            // can also be used to control the format of the API version in route templates
-            options.SubstituteApiVersionInUrl = true;
-        });
+        // note: this option is only necessary when versioning by url segment. the SubstitutionFormat
+        // can also be used to control the format of the API version in route templates
+        options.SubstituteApiVersionInUrl = true;
+    });
 
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
