@@ -41,7 +41,9 @@ builder.Services
 
             // Since our MediatR classes all end with either Query or Command, we have to ensure the swagger schema uses
             //   the full class names in order to avoid conflicts while generating swagger.json.
-            options.CustomSchemaIds(s => s.FullName);
+            // Use "." as separators instead of "+" so that nested types will work.
+            //   See: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2703#issuecomment-1707894923
+            options.CustomSchemaIds(s => s.FullName?.Replace("+", ".", StringComparison.Ordinal));
 
             // Allow POST/PUT API endpoints to have private setters on List<T> and still render in the swagger docs.
             //   See: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/1536#issuecomment-607140245
