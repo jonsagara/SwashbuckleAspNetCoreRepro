@@ -1,5 +1,19 @@
 # Swashbuckle.AspNetCore 6.3.0 (and above) bug reproduction
 
+> **Update 2024-05-14:** There is a [workaround](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/2703) documented in the issue tracker:
+> 
+> ```csharp
+> builder.Services.AddSwaggerGen(c =>
+> {
+>     c.CustomSchemaIds(type => type.FullName.Replace("+", "."));
+> });
+> ```
+> 
+> This allows the nested types to function correctly in the generated swagger page.
+> 
+> Also, the project has [a new core team](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/discussions/2778), and just [released an updated version](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/releases/tag/v6.6.1).
+
+
 After upgrading to `Swashbuckle.AspNetCore 6.3.0`, I started to get errors in my swagger docs whenever I clicked on an action name to expand the details:
 
 ![Swagger Error](https://github.com/jonsagara/SwashbuckleAspNetCoreRepro/blob/main/swagger_error.png?raw=true)
